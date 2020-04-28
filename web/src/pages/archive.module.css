@@ -1,0 +1,15 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+#filter-cont h3 {
+  display: inline;
+  cursor: pointer;
+}
+
+#filter-cont h3.active {
+  color: var(--color-black);
+}
+
+#filter-cont h3.inactive {
+  color: var(--color-light-gray);
+}
