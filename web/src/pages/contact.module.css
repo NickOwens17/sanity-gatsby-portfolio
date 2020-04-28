@@ -1,0 +1,34 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+input {
+  border-radius: 10px;
+  width: 100%;
+  border: var(--color-black) 2px solid;
+  padding: 0em 1em;
+  height: 3em;
+}
+
+textarea {
+  border-radius: 10px;
+  width: 100%;
+  border: var(--color-black) 2px solid;
+  padding: 1em 1em;
+  height: 4em;
+}
+
+button {
+  font-size: var(--font-title3-size);
+  padding: .5em 1.5em .5em 1.5em;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+  font-weight: bold;
+  color: var(--color-very-light-gray);
+  border: transparent 2px solid;
+  transform: scale(1);
+  transition: all 0.8 ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
