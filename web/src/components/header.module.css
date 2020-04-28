@@ -46,7 +46,7 @@
   outline: none;
   color: inherit;
 
-  & svg {
+  @nest & svg {
     display: block;
     fill: inherit;
   }
@@ -62,6 +62,12 @@
   @nest & ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @nest & ul li {
+    display: inline-flex;
   }
 
   @nest & ul li a {
@@ -88,6 +94,11 @@
     @nest & ul {
       padding: 1rem 0;
     }
+
+    @nest & ul li {
+      display: inline;
+    }
+
 
     @nest & ul li a {
       padding: 0.5rem 1.5rem;

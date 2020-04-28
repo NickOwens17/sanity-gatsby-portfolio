@@ -26,6 +26,11 @@ export const query = graphql`
       edges {
         node {
           id
+          publishedAt
+          categories {
+            _id
+            title
+          }
           mainImage {
             crop {
               _key
@@ -90,11 +95,20 @@ const IndexPage = props => {
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
+            title='Case Studies'
             nodes={projectNodes}
             browseMoreHref='/archive/'
           />
         )}
+        {/*
+        {projectNodes && (
+          <ProjectPreviewGrid title='Projects' nodes={projectNodes} browseMoreHref='/archive/' />
+        )}
+
+        ,This should be its own component
+        {projectNodes && (
+          <ProjectPreviewGrid title='Gallery' nodes={projectNodes} browseMoreHref='/archive/' />
+        )} */}
       </Container>
     </Layout>
   )
