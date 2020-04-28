@@ -1,27 +1,29 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 input {
+  margin-top: 0.3em;
   border-radius: 10px;
   width: 100%;
-  border: var(--color-black) 2px solid;
-  padding: 0em 1em;
+  border: var(--color-black) 0.15em solid;
+  padding: 0em 0em 0em 1em;
   height: 3em;
   font-family: var(--font-family-sans);
 }
 
 textarea {
+  margin-top: 0.3em;
   border-radius: 10px;
   width: 100%;
-  border: var(--color-black) 2px solid;
-  padding: 1em 1em;
+  border: var(--color-black) 0.15em solid;
+  padding: 1em 0em 1em 1em;
   height: 4em;
   font-family: var(--font-family-sans);
 }
 
 button {
   font-size: var(--font-title3-size);
-  padding: .5em 1.5em .5em 1.5em;
+  padding: 0.5em 1.5em 0.5em 1.5em;
   border-radius: 10px;
   background-color: var(--color-accent);
   font-weight: bold;
