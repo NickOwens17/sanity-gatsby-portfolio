@@ -20,6 +20,17 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Amatic SC`,
+            variants: ['700']
+          }
+        ]
+      }
     }
   ]
 }
