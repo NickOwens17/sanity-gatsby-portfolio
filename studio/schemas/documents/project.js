@@ -2,7 +2,7 @@ import {format} from 'date-fns'
 
 export default {
   name: 'sampleProject',
-  title: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     {
@@ -52,6 +52,16 @@ export default {
       type: 'datetime'
     },
     {
+      name: 'showInDesign',
+      title: 'Show in Design Section of Portfolio',
+      type: 'boolean'
+    },
+    {
+      name: 'showInDev',
+      title: 'Show in Development Section of Portfolio',
+      type: 'boolean'
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'figure'
@@ -65,6 +75,19 @@ export default {
           type: 'reference',
           to: {
             type: 'category'
+          }
+        }
+      ]
+    },
+    {
+      name: 'software',
+      title: 'Software',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'software'
           }
         }
       ]
