@@ -77,6 +77,12 @@ export const query = graphql`
         }
         roles
       }
+      showInDev
+      showInDesign
+      software {
+        _id
+        title
+      }
     }
   }
 `

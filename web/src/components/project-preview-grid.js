@@ -1,26 +1,58 @@
-import {Link} from 'gatsby'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ProjectPreview from './project-preview'
 
 import styles from './project-preview-grid.module.css'
 
+import {responsiveTitle3, responsiveTitle1} from '../components/typography.module.css'
+import {cn, filterOutDesignProjects, filterOutDevelopmentProjects} from '../lib/helpers'
+
 function ProjectPreviewGrid (props) {
+  const [designShowing, setDesignShowing] = useState(true)
+  const [developmentShowing, setDevelopmentShowing] = useState(true)
+
+  const allProjects = (props || {}).nodes
+  const [activeProjects, setActiveProjects] = useState(allProjects)
+
+  const toggleDesignShowing = () => {
+    setDesignShowing(!designShowing)
+  }
+
+  const toggleDevelopmentShowing = () => {
+    setDevelopmentShowing(!developmentShowing)
+  }
+
+  useEffect(() => {
+    let filteredProjects = allProjects
+
+    filteredProjects = designShowing
+      ? developmentShowing
+        ? filteredProjects
+        : filteredProjects.filter(filterOutDevelopmentProjects)
+      : developmentShowing
+        ? filteredProjects.filter(filterOutDesignProjects)
+        : filteredProjects.filter(filterOutDesignProjects).filter(filterOutDevelopmentProjects)
+    setActiveProjects(filteredProjects)
+  }, [designShowing, developmentShowing])
+
   return (
     <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      <h1 className={responsiveTitle1}>Projects</h1>
+      <div className={styles.filterContainer}>
+        <h3
+          onClick={toggleDesignShowing}
+          className={cn(responsiveTitle3, designShowing ? styles.active : styles.inactive)}>Design</h3>
+        <h3
+          onClick={toggleDevelopmentShowing}
+          className={cn(responsiveTitle3, developmentShowing ? styles.active : styles.inactive)}>Development</h3>
+      </div>
       <ul className={styles.grid}>
-        {props.nodes &&
-          props.nodes.map(node => (
+        {activeProjects &&
+          activeProjects.map(node => (
             <li key={node.id}>
               <ProjectPreview {...node} />
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
-        <div className={styles.browseMoreNav}>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
-      )}
     </div>
   )
 }

@@ -8,6 +8,8 @@ import styles from './project-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ProjectPreview (props) {
+  const subTitle = props.showInDev ? props.showInDesign ? 'Design ~ Development' : 'Developement' : 'Design'
+
   return (
     <Link className={styles.root} to={`/project/${props.slug.current}`}>
       <div className={styles.leadMediaThumb}>
@@ -22,7 +24,7 @@ function ProjectPreview (props) {
         )}
       </div>
       <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-      <h4>Design | Development</h4> {/* Conditionally render this */}
+      <h4 className={styles.subTitle}>{ subTitle }</h4>
       {props._rawExcerpt && (
         <div className={styles.excerpt}>
           <BlockText blocks={props._rawExcerpt} />

@@ -11,8 +11,8 @@ import {responsiveTitle1} from '../components/typography.module.css'
 import styles from './about.module.css'
 
 const AboutPage = ({data}) => {
-  const image = data.sanityPerson.image
-  const _rawBio = data.sanityPerson._rawBio
+  const image = data.allSanityPerson.nodes[0].image
+  const _rawBio = data.allSanityPerson.nodes[0]._rawBio
 
   return (
     <Layout>
@@ -39,7 +39,8 @@ const AboutPage = ({data}) => {
 
 export const query = graphql`
   query AboutQuery {
-    sanityPerson {
+    allSanityPerson (filter: {_id: {eq: "9122a1cc-40d0-4120-9f30-3e997007896c"}}) {
+      nodes {
       image {
         crop {
           _key
@@ -63,6 +64,7 @@ export const query = graphql`
         }
       }
       _rawBio
+    }
     }
   }
 `

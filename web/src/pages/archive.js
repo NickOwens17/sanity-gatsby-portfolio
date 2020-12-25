@@ -5,10 +5,9 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {mapEdgesToNodes, filterOutDocsWithoutSlugs, cn} from '../lib/helpers'
+import {mapEdgesToNodes, filterOutDocsWithoutSlugs} from '../lib/helpers'
 
-import {responsiveTitle1, responsiveTitle3} from '../components/typography.module.css'
-import styles from './archive.module.css'
+import {responsiveTitle1} from '../components/typography.module.css'
 
 export const query = graphql`
   query ArchivePageQuery {
@@ -55,22 +54,6 @@ const ArchivePage = props => {
       <SEO title='Archive' />
       <Container>
         <h1 className={responsiveTitle1}>Projects</h1>
-        <div id={styles.filterCont}>
-          <h3
-            // onClick={design ? 'styles.inactive' : 'styles.active'}
-            className={cn(responsiveTitle3, styles.active)}
-          >
-            Design
-          </h3>
-          <h3 className={responsiveTitle3}> | </h3>
-          <h3
-            // onClick={development ? 'styles.inactive' : 'styles.active'}
-            className={cn(responsiveTitle3, styles.active)}
-          >
-            Development
-          </h3>
-        </div>
-
         {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
       </Container>
     </Layout>
