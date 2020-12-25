@@ -7,7 +7,7 @@
 
 .filterContainer {
   display: flex;
-  margin: 1em 0em 3em;
+  margin: -1em 0em 2em;
 }
 
 .filterContainer > h3 {
@@ -18,13 +18,14 @@
 }
 
 .filterContainer > .active,  .filterContainer > .inactive:hover  {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-accent);
+  color: var(--color-black);
   cursor: pointer;
 }
 
 .filterContainer > .active:hover, .filterContainer > .inactive:hover {
   transform: scale(1.025);
+  opacity: 0.8;
 }
 
 .filterContainer > .inactive, .filterContainer > .active:hover {
