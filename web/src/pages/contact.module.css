@@ -3,7 +3,7 @@
 
 input {
   margin-top: 0.3em;
-  border-radius: 10px;
+  border-radius: 4px;
   width: 100%;
   border: var(--color-black) 0.15em solid;
   padding: 0em 0em 0em 1em;
@@ -13,7 +13,7 @@ input {
 
 textarea {
   margin-top: 0.3em;
-  border-radius: 10px;
+  border-radius: 4px;
   width: 100%;
   border: var(--color-black) 0.15em solid;
   padding: 1em 0em 1em 1em;
@@ -24,11 +24,11 @@ textarea {
 button {
   font-size: var(--font-title3-size);
   padding: 0.5em 1.5em 0.5em 1.5em;
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: var(--color-accent);
   font-weight: bold;
-  color: var(--color-very-light-gray);
-  border: transparent 2px solid;
+  color: var(--color-black);
+  border: var(--color-black) 2px solid;
   transform: scale(1);
   transition: all 0.8 ease-in-out;
 }
