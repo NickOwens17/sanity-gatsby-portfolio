@@ -17,6 +17,14 @@ export function filterOutDocsPublishedInTheFuture ({publishedAt}) {
   return !isFuture(publishedAt)
 }
 
+export function filterOutDesignProjects ({showInDev}) {
+  return showInDev
+}
+
+export function filterOutDevelopmentProjects ({showInDesign}) {
+  return showInDesign
+}
+
 export function getBlogUrl (publishedAt, slug) {
   return `/blog/${format(publishedAt, 'YYYY/MM')}/${slug.current || slug}/`
 }

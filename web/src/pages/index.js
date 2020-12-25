@@ -26,6 +26,8 @@ export const query = graphql`
       edges {
         node {
           id
+          showInDesign
+          showInDev
           publishedAt
           categories {
             _id
@@ -94,21 +96,8 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
-          <ProjectPreviewGrid
-            title='Case Studies'
-            nodes={projectNodes}
-            browseMoreHref='/archive/'
-          />
+          <ProjectPreviewGrid nodes={projectNodes} />
         )}
-        {/*
-        {projectNodes && (
-          <ProjectPreviewGrid title='Projects' nodes={projectNodes} browseMoreHref='/archive/' />
-        )}
-
-        ,This should be its own component
-        {projectNodes && (
-          <ProjectPreviewGrid title='Gallery' nodes={projectNodes} browseMoreHref='/archive/' />
-        )} */}
       </Container>
     </Layout>
   )

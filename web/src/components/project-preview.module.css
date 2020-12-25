@@ -8,6 +8,14 @@
   composes: responsiveTitle1 from './typography.module.css';
 }
 
+.subTitle {
+  color: var(--color-gray);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.3em;
+  margin: -0.25em 0em 0.5em 0em;
+}
+
 .leadMediaThumb {
   position: relative;
   padding-bottom: 66.666%;
